@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!--projecttitle--><title>SMA Swasta di Bandar Lampung</title><!--projecttitle-end-->
+		<!--projectdescription--><meta name="description" content="New 3Sixty Virtual Tour Project"><!--projectdescription-end-->
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width, shrink-to-fit=no">
+		
+		<link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		
+		<!-- Insert this line above script imports  -->
+		<script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+		
+		<script src="imagedata.js"></script>
+		<script src="jquery.js"></script>
+		<script src="three.min.js"></script>
+		<script src="panolens.min.js"></script>
+		
+		<!-- Insert this line after script imports -->
+		<script>if (window.module) module = window.module;</script>
+		
+		<style>
+		
+			
+						
+			/* SCROLLBAR STYLING */
+			/* width */
+			::-webkit-scrollbar {
+				width: 0.25em;
+				height: 0.25em;
+			}
+			/* Track */
+			::-webkit-scrollbar-track {
+				background: #2c3643; 
+			}
+			/* Handle */
+			::-webkit-scrollbar-thumb {
+				background: #0d9e59; 
+				transition: background .5s;
+			}
+			/* Handle on hover */
+			::-webkit-scrollbar-thumb:hover {
+				background: #00e075; 
+			}
+
+
+			html, body {
+				margin: 0;
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+				background-color: #000;
+				color; black;
+			}
+
+			a:link, a:visited{
+				color: #bdc3c7;	
+			}
+
+			.fullwrapper{
+				position: fixed;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				background-color: black;
+			}
+			
+			#container {
+                width: 100%;
+                height: 100%;
+            }
+			
+			#tmp{
+				position: fixed;
+				top: 0;
+				left: 0; 
+				right: 0;
+				bottom: 0;
+				padding: 3em;
+				background-color: rgba(0,0,0,.5);
+				backdrop-filter: blur(5px);
+				display: none;
+			}
+		</style>
+	</head>
+	<body id="body">
+	    <div id="container" style="color: black;"></div>
+    	
+		
+		
+		<!--customhtml--><div class='customhotspot' id='sma_alazhar_3'><div onclick='chclickinfospotsma_alazhar_31();' id='infospotsma_alazhar_31' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/informationbutton.png' style='width: 64px; height: 64px;'></div></div><div class='customhotspot' id='sma_alkautsar'><div onclick='chclickinfospotsma_alkautsar2();' id='infospotsma_alkautsar2' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/informationbutton.png' style='width: 64px; height: 64px;'></div></div><div class='customhotspot' id='sma_arraihan'><div onclick='chclickinfospotsma_arraihan2();' id='infospotsma_arraihan2' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/informationbutton.png' style='width: 64px; height: 64px;'></div></div><div class='customhotspot' id='sma_bpk_penabur'><div onclick='chclickinfospotsma_bpk_penabur2();' id='infospotsma_bpk_penabur2' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/informationbutton.png' style='width: 64px; height: 64px;'></div></div><div class='customhotspot' id='sma_darma_bangsa'><div onclick='chclickinfospotsma_darma_bangsa2();' id='infospotsma_darma_bangsa2' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/informationbutton.png' style='width: 64px; height: 64px;'></div></div><div class='customhotspot' id='sma_dcc_global'><div onclick='chclickinfospotsma_dcc_global2();' id='infospotsma_dcc_global2' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/informationbutton.png' style='width: 64px; height: 64px;'></div></div><div class='customhotspot' id='sma_fransiskus'><div onclick='chclickinfospotsma_fransiskus2();' id='infospotsma_fransiskus2' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/informationbutton.png' style='width: 64px; height: 64px;'></div></div><div class='customhotspot' id='sma_gajah_mada'><div onclick='chclickinfospotsma_gajah_mada2();' id='infospotsma_gajah_mada2' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/informationbutton.png' style='width: 64px; height: 64px;'></div></div><div class='customhotspot' id='sma_global_surya'><div onclick='chclickinfospotsma_global_surya2();' id='infospotsma_global_surya2' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/informationbutton.png' style='width: 64px; height: 64px;'></div></div><div class='customhotspot' id='sma_immanuel'><div onclick='chclickinfospotsma_immanuel2();' id='infospotsma_immanuel2' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/informationbutton.png' style='width: 64px; height: 64px;'></div></div><div class='customhotspot' id='sma_it_baitul_jannah'><div onclick='chclickinfospotsma_it_baitul_jannah2();' id='infospotsma_it_baitul_jannah2' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/informationbutton.png' style='width: 64px; height: 64px;'></div></div><div class='customhotspot' id='sma_it_daarul_ilmi'><div onclick='chclickinfospotsma_it_daarul_ilmi2();' id='infospotsma_it_daarul_ilmi2' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/informationbutton.png' style='width: 64px; height: 64px;'></div></div><div class='customhotspot' id='sma_it_fitrah_insani'><div onclick='chclickinfospotsma_it_fitrah_insani2();' id='infospotsma_it_fitrah_insani2' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/informationbutton.png' style='width: 64px; height: 64px;'></div></div><div class='customhotspot' id='sma_it_permata_bunda'><div onclick='chclickinfospotsma_it_permata_bunda2();' id='infospotsma_it_permata_bunda2' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/informationbutton.png' style='width: 64px; height: 64px;'></div></div><div class='customhotspot' id='sma_muhammadiyah_2'><div onclick='chclickinfospotsma_muhammadiyah_22();' id='infospotsma_muhammadiyah_22' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/informationbutton.png' style='width: 64px; height: 64px;'></div></div><div class='customhotspot' id='sma_perintis_1'><div onclick='chclickinfospotsma_perintis_12();' id='infospotsma_perintis_12' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/informationbutton.png' style='width: 64px; height: 64px;'></div></div><div class='customhotspot' id='sma_perintis_2'><div onclick='chclickinfospotsma_perintis_22();' id='infospotsma_perintis_22' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/informationbutton.png' style='width: 64px; height: 64px;'></div></div><div class='customhotspot' id='sma_surya_dharma'><div onclick='chclickinfospotsma_surya_dharma2();' id='infospotsma_surya_dharma2' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/informationbutton.png' style='width: 64px; height: 64px;'></div></div><div class='customhotspot' id='sma_xaverius'><div onclick='chclickinfospotsma_xaverius2();' id='infospotsma_xaverius2' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/informationbutton.png' style='width: 64px; height: 64px;'></div></div><div class='customhotspot' id='sma_yadika'><div onclick='chclickinfospotsma_yadika2();' id='infospotsma_yadika2' style='position: fixed; top: 0; left: 0; cursor: pointer;'><img src='customhotspots/informationbutton.png' style='width: 64px; height: 64px;'></div></div><!--customhtml-end-->
+		
+		<div id="tmp">
+			<div style="width: 100%; height: 100%; overflow: hidden; overflow-y: auto; box-sizing: border-box; position: relative;" id="tmpcontent"></div>
+			<div class="mediaclosebutton" onclick="hideTemp()"><i class="fa fa-times-circle"></i></div>
+		</div>
+
+		<div id="loading" class="fullwrapper" style="display: table; width: 100%; height: 100%;">
+    		<div style="display: table-cell; vertical-align: middle; text-align: center; color: white; font-size: 30px; padding: 50px;">
+    			<!--loadingtext-->Loading...<!--loadingtext-end-->
+				<div id="loadingperc" style="font-size:12px;"></div>
+    		</div>
+    	</div>
+		
+    	<script>
+			
+            var container = document.querySelector( '#container' );
+			/*panolens*/
+var viewer = new PANOLENS.Viewer( { container: container , controlBar: true,  output: 'console' , autoHideInfospot: false, } );
+/*panolens-end*/
+			
+			viewer.addUpdateCallback(function(){});
+			
+			/*panoramas*/
+var sma_alazhar_3 = new PANOLENS.ImagePanorama( "panoramas/sma_alazhar_3.png" );
+			sma_alazhar_3.addEventListener('progress', onProgress);
+			sma_alazhar_3.addEventListener('load', function(e){
+				endLoading();
+			});
+			sma_alazhar_3.addEventListener('enter', function(e){
+				endLoading();
+			});
+			sma_alazhar_3.addEventListener('click', function(e){
+			});
+
+var infospotsma_alazhar_30 = new PANOLENS.Infospot( 512, hotspotIcons[4].data, true );
+					infospotsma_alazhar_30.position.set( 2598.18, -1105.29, -4116.54 );
+					sma_alazhar_3.add(infospotsma_alazhar_30);
+infospotsma_alazhar_30.addEventListener('click', function(){
+ChangePanorama('sma_alkautsar');
+});
+var infospotsma_alazhar_31 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotsma_alazhar_31.position.set( -896.18, 585.96, -4874.69 );
+					infospotsma_alazhar_31.visible = false;
+					sma_alazhar_3.add(infospotsma_alazhar_31);
+infospotsma_alazhar_31.addEventListener('click', function(){
+window.open( 'https://smaalazhar3.sch.id/', '_blank');
+});
+viewer.add( sma_alazhar_3 );
+var sma_alkautsar = new PANOLENS.ImagePanorama( "panoramas/sma_alkautsar.png" );
+			sma_alkautsar.addEventListener('progress', onProgress);
+			sma_alkautsar.addEventListener('load', function(e){
+				endLoading();
+			});
+			sma_alkautsar.addEventListener('enter', function(e){
+				endLoading();
+			});
+			sma_alkautsar.addEventListener('click', function(e){
+			});
+
+var infospotsma_alkautsar0 = new PANOLENS.Infospot( 512, hotspotIcons[3].data, true );
+					infospotsma_alkautsar0.position.set( -3179.92, -660.81, 3789.29 );
+					sma_alkautsar.add(infospotsma_alkautsar0);
+infospotsma_alkautsar0.addEventListener('click', function(){
+ChangePanorama('sma_alazhar_3');
+});
+var infospotsma_alkautsar1 = new PANOLENS.Infospot( 512, hotspotIcons[4].data, true );
+					infospotsma_alkautsar1.position.set( 2415.69, -410.00, 4353.46 );
+					sma_alkautsar.add(infospotsma_alkautsar1);
+infospotsma_alkautsar1.addEventListener('click', function(){
+ChangePanorama('sma_arraihan');
+});
+var infospotsma_alkautsar2 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotsma_alkautsar2.position.set( -329.82, -810.36, 4915.55 );
+					infospotsma_alkautsar2.visible = false;
+					sma_alkautsar.add(infospotsma_alkautsar2);
+infospotsma_alkautsar2.addEventListener('click', function(){
+window.open( 'https://alkautsarlampung.sch.id/', '_blank');
+});
+viewer.add( sma_alkautsar );
+var sma_arraihan = new PANOLENS.ImagePanorama( "panoramas/sma_arraihan.png" );
+			sma_arraihan.addEventListener('progress', onProgress);
+			sma_arraihan.addEventListener('load', function(e){
+				endLoading();
+			});
+			sma_arraihan.addEventListener('enter', function(e){
+				endLoading();
+			});
+			sma_arraihan.addEventListener('click', function(e){
+			});
+
+var infospotsma_arraihan0 = new PANOLENS.Infospot( 512, hotspotIcons[4].data, true );
+					infospotsma_arraihan0.position.set( -625.15, -893.73, 4871.70 );
+					sma_arraihan.add(infospotsma_arraihan0);
+infospotsma_arraihan0.addEventListener('click', function(){
+ChangePanorama('sma_bpk_penabur');
+});
+var infospotsma_arraihan1 = new PANOLENS.Infospot( 512, hotspotIcons[3].data, true );
+					infospotsma_arraihan1.position.set( -3563.55, -708.08, 3423.28 );
+					sma_arraihan.add(infospotsma_arraihan1);
+infospotsma_arraihan1.addEventListener('click', function(){
+ChangePanorama('sma_alkautsar');
+});
+var infospotsma_arraihan2 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotsma_arraihan2.position.set( -1934.37, 964.64, 4501.18 );
+					infospotsma_arraihan2.visible = false;
+					sma_arraihan.add(infospotsma_arraihan2);
+infospotsma_arraihan2.addEventListener('click', function(){
+window.open( 'https://www.instagram.com/arraihan_islamicschool/?hl=en', '_blank');
+});
+viewer.add( sma_arraihan );
+var sma_bpk_penabur = new PANOLENS.ImagePanorama( "panoramas/sma_bpk_penabur.png" );
+			sma_bpk_penabur.addEventListener('progress', onProgress);
+			sma_bpk_penabur.addEventListener('load', function(e){
+				endLoading();
+			});
+			sma_bpk_penabur.addEventListener('enter', function(e){
+				endLoading();
+			});
+			sma_bpk_penabur.addEventListener('click', function(e){
+			});
+
+var infospotsma_bpk_penabur0 = new PANOLENS.Infospot( 512, hotspotIcons[4].data, true );
+					infospotsma_bpk_penabur0.position.set( -1710.41, -584.76, -4650.97 );
+					sma_bpk_penabur.add(infospotsma_bpk_penabur0);
+infospotsma_bpk_penabur0.addEventListener('click', function(){
+ChangePanorama('sma_darma_bangsa');
+});
+var infospotsma_bpk_penabur1 = new PANOLENS.Infospot( 512, hotspotIcons[3].data, true );
+					infospotsma_bpk_penabur1.position.set( 1776.75, -559.64, -4628.68 );
+					sma_bpk_penabur.add(infospotsma_bpk_penabur1);
+infospotsma_bpk_penabur1.addEventListener('click', function(){
+ChangePanorama('sma_arraihan');
+});
+var infospotsma_bpk_penabur2 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotsma_bpk_penabur2.position.set( -302.70, 298.49, -4972.41 );
+					infospotsma_bpk_penabur2.visible = false;
+					sma_bpk_penabur.add(infospotsma_bpk_penabur2);
+infospotsma_bpk_penabur2.addEventListener('click', function(){
+window.open( 'https://bpkpenabur.or.id/', '_blank');
+});
+viewer.add( sma_bpk_penabur );
+var sma_darma_bangsa = new PANOLENS.ImagePanorama( "panoramas/sma_darma_bangsa.png" );
+			sma_darma_bangsa.addEventListener('progress', onProgress);
+			sma_darma_bangsa.addEventListener('load', function(e){
+				endLoading();
+			});
+			sma_darma_bangsa.addEventListener('enter', function(e){
+				endLoading();
+			});
+			sma_darma_bangsa.addEventListener('click', function(e){
+			});
+
+var infospotsma_darma_bangsa0 = new PANOLENS.Infospot( 512, hotspotIcons[4].data, true );
+					infospotsma_darma_bangsa0.position.set( 1295.25, -202.23, 4814.01 );
+					sma_darma_bangsa.add(infospotsma_darma_bangsa0);
+infospotsma_darma_bangsa0.addEventListener('click', function(){
+ChangePanorama('sma_dcc_global');
+});
+var infospotsma_darma_bangsa1 = new PANOLENS.Infospot( 512, hotspotIcons[3].data, true );
+					infospotsma_darma_bangsa1.position.set( -1659.17, 139.27, 4705.63 );
+					sma_darma_bangsa.add(infospotsma_darma_bangsa1);
+infospotsma_darma_bangsa1.addEventListener('click', function(){
+ChangePanorama('sma_arraihan');
+});
+var infospotsma_darma_bangsa2 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotsma_darma_bangsa2.position.set( -203.36, -644.79, 4944.05 );
+					infospotsma_darma_bangsa2.visible = false;
+					sma_darma_bangsa.add(infospotsma_darma_bangsa2);
+infospotsma_darma_bangsa2.addEventListener('click', function(){
+window.open( 'https://www.darmabangsa.sch.id', '_blank');
+});
+viewer.add( sma_darma_bangsa );
+var sma_dcc_global = new PANOLENS.ImagePanorama( "panoramas/sma_dcc_global.png" );
+			sma_dcc_global.addEventListener('progress', onProgress);
+			sma_dcc_global.addEventListener('load', function(e){
+				endLoading();
+			});
+			sma_dcc_global.addEventListener('enter', function(e){
+				endLoading();
+			});
+			sma_dcc_global.addEventListener('click', function(e){
+			});
+
+var infospotsma_dcc_global0 = new PANOLENS.Infospot( 512, hotspotIcons[4].data, true );
+					infospotsma_dcc_global0.position.set( 109.15, -1160.95, 4857.38 );
+					sma_dcc_global.add(infospotsma_dcc_global0);
+infospotsma_dcc_global0.addEventListener('click', function(){
+ChangePanorama('sma_fransiskus');
+});
+var infospotsma_dcc_global1 = new PANOLENS.Infospot( 512, hotspotIcons[3].data, true );
+					infospotsma_dcc_global1.position.set( -2711.44, -897.46, 4092.21 );
+					sma_dcc_global.add(infospotsma_dcc_global1);
+infospotsma_dcc_global1.addEventListener('click', function(){
+ChangePanorama('sma_dcc_global');
+});
+var infospotsma_dcc_global2 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotsma_dcc_global2.position.set( 664.04, 199.22, 4942.30 );
+					infospotsma_dcc_global2.visible = false;
+					sma_dcc_global.add(infospotsma_dcc_global2);
+infospotsma_dcc_global2.addEventListener('click', function(){
+window.open( 'https://www.dccglobal.sch.id/', '_blank');
+});
+viewer.add( sma_dcc_global );
+var sma_fransiskus = new PANOLENS.ImagePanorama( "panoramas/sma_fransiskus.png" );
+			sma_fransiskus.addEventListener('progress', onProgress);
+			sma_fransiskus.addEventListener('load', function(e){
+				endLoading();
+			});
+			sma_fransiskus.addEventListener('enter', function(e){
+				endLoading();
+			});
+			sma_fransiskus.addEventListener('click', function(e){
+			});
+
+var infospotsma_fransiskus0 = new PANOLENS.Infospot( 512, hotspotIcons[4].data, true );
+					infospotsma_fransiskus0.position.set( -3455.34, -429.87, -3577.98 );
+					sma_fransiskus.add(infospotsma_fransiskus0);
+infospotsma_fransiskus0.addEventListener('click', function(){
+ChangePanorama('sma_gajah_mada');
+});
+var infospotsma_fransiskus1 = new PANOLENS.Infospot( 512, hotspotIcons[3].data, true );
+					infospotsma_fransiskus1.position.set( 393.98, -448.47, -4957.29 );
+					sma_fransiskus.add(infospotsma_fransiskus1);
+infospotsma_fransiskus1.addEventListener('click', function(){
+ChangePanorama('sma_dcc_global');
+});
+var infospotsma_fransiskus2 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotsma_fransiskus2.position.set( -1405.57, 383.70, -4777.08 );
+					infospotsma_fransiskus2.visible = false;
+					sma_fransiskus.add(infospotsma_fransiskus2);
+infospotsma_fransiskus2.addEventListener('click', function(){
+window.open( 'https://www.instagram.com/sma_fransiskus_bdl/?hl=en', '_blank');
+});
+viewer.add( sma_fransiskus );
+var sma_gajah_mada = new PANOLENS.ImagePanorama( "panoramas/sma_gajah_mada.png" );
+			sma_gajah_mada.addEventListener('progress', onProgress);
+			sma_gajah_mada.addEventListener('load', function(e){
+				endLoading();
+			});
+			sma_gajah_mada.addEventListener('enter', function(e){
+				endLoading();
+			});
+			sma_gajah_mada.addEventListener('click', function(e){
+			});
+
+var infospotsma_gajah_mada0 = new PANOLENS.Infospot( 512, hotspotIcons[4].data, true );
+					infospotsma_gajah_mada0.position.set( -2817.37, -1399.99, 3881.36 );
+					sma_gajah_mada.add(infospotsma_gajah_mada0);
+infospotsma_gajah_mada0.addEventListener('click', function(){
+ChangePanorama('sma_global_surya');
+});
+var infospotsma_gajah_mada1 = new PANOLENS.Infospot( 512, hotspotIcons[3].data, true );
+					infospotsma_gajah_mada1.position.set( -4958.88, -456.50, 345.50 );
+					sma_gajah_mada.add(infospotsma_gajah_mada1);
+infospotsma_gajah_mada1.addEventListener('click', function(){
+ChangePanorama('sma_fransiskus');
+});
+var infospotsma_gajah_mada2 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotsma_gajah_mada2.position.set( -4690.86, 975.95, 1399.27 );
+					infospotsma_gajah_mada2.visible = false;
+					sma_gajah_mada.add(infospotsma_gajah_mada2);
+infospotsma_gajah_mada2.addEventListener('click', function(){
+window.open( 'https://www.instagram.com/smagama_bdl/?hl=en', '_blank');
+});
+viewer.add( sma_gajah_mada );
+var sma_global_surya = new PANOLENS.ImagePanorama( "panoramas/sma_global_surya.png" );
+			sma_global_surya.addEventListener('progress', onProgress);
+			sma_global_surya.addEventListener('load', function(e){
+				endLoading();
+			});
+			sma_global_surya.addEventListener('enter', function(e){
+				endLoading();
+			});
+			sma_global_surya.addEventListener('click', function(e){
+			});
+
+var infospotsma_global_surya0 = new PANOLENS.Infospot( 512, hotspotIcons[4].data, true );
+					infospotsma_global_surya0.position.set( 4691.94, -666.27, -1576.79 );
+					sma_global_surya.add(infospotsma_global_surya0);
+infospotsma_global_surya0.addEventListener('click', function(){
+ChangePanorama('sma_immanuel');
+});
+var infospotsma_global_surya1 = new PANOLENS.Infospot( 512, hotspotIcons[3].data, true );
+					infospotsma_global_surya1.position.set( 4687.34, -728.86, 1568.13 );
+					sma_global_surya.add(infospotsma_global_surya1);
+infospotsma_global_surya1.addEventListener('click', function(){
+ChangePanorama('sma_gajah_mada');
+});
+var infospotsma_global_surya2 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotsma_global_surya2.position.set( 4232.62, 485.76, -2601.61 );
+					infospotsma_global_surya2.visible = false;
+					sma_global_surya.add(infospotsma_global_surya2);
+infospotsma_global_surya2.addEventListener('click', function(){
+window.open( 'https://www.globalsurya.sch.id/', '_blank');
+});
+viewer.add( sma_global_surya );
+var sma_immanuel = new PANOLENS.ImagePanorama( "panoramas/sma_immanuel.png" );
+			sma_immanuel.addEventListener('progress', onProgress);
+			sma_immanuel.addEventListener('load', function(e){
+				endLoading();
+			});
+			sma_immanuel.addEventListener('enter', function(e){
+				endLoading();
+			});
+			sma_immanuel.addEventListener('click', function(e){
+			});
+
+var infospotsma_immanuel0 = new PANOLENS.Infospot( 512, hotspotIcons[4].data, true );
+					infospotsma_immanuel0.position.set( 969.48, -249.66, 4891.92 );
+					sma_immanuel.add(infospotsma_immanuel0);
+infospotsma_immanuel0.addEventListener('click', function(){
+ChangePanorama('sma_it_baitul_jannah');
+});
+var infospotsma_immanuel1 = new PANOLENS.Infospot( 512, hotspotIcons[3].data, true );
+					infospotsma_immanuel1.position.set( -2273.70, -228.91, 4435.35 );
+					sma_immanuel.add(infospotsma_immanuel1);
+infospotsma_immanuel1.addEventListener('click', function(){
+ChangePanorama('sma_global_surya');
+});
+var infospotsma_immanuel2 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotsma_immanuel2.position.set( -94.07, -318.84, 4982.54 );
+					infospotsma_immanuel2.visible = false;
+					sma_immanuel.add(infospotsma_immanuel2);
+infospotsma_immanuel2.addEventListener('click', function(){
+window.open( 'https://www.instagram.com/osissmanuel/', '_blank');
+});
+viewer.add( sma_immanuel );
+var sma_it_baitul_jannah = new PANOLENS.ImagePanorama( "panoramas/sma_it_baitul_jannah.png" );
+			sma_it_baitul_jannah.addEventListener('progress', onProgress);
+			sma_it_baitul_jannah.addEventListener('load', function(e){
+				endLoading();
+			});
+			sma_it_baitul_jannah.addEventListener('enter', function(e){
+				endLoading();
+			});
+			sma_it_baitul_jannah.addEventListener('click', function(e){
+			});
+
+var infospotsma_it_baitul_jannah0 = new PANOLENS.Infospot( 512, hotspotIcons[4].data, true );
+					infospotsma_it_baitul_jannah0.position.set( 3392.48, -600.43, 3612.34 );
+					sma_it_baitul_jannah.add(infospotsma_it_baitul_jannah0);
+infospotsma_it_baitul_jannah0.addEventListener('click', function(){
+ChangePanorama('sma_it_daarul_ilmi');
+});
+var infospotsma_it_baitul_jannah1 = new PANOLENS.Infospot( 512, hotspotIcons[3].data, true );
+					infospotsma_it_baitul_jannah1.position.set( -1191.22, -550.94, 4814.75 );
+					sma_it_baitul_jannah.add(infospotsma_it_baitul_jannah1);
+infospotsma_it_baitul_jannah1.addEventListener('click', function(){
+ChangePanorama('sma_immanuel');
+});
+var infospotsma_it_baitul_jannah2 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotsma_it_baitul_jannah2.position.set( 1760.52, -684.37, 4619.12 );
+					infospotsma_it_baitul_jannah2.visible = false;
+					sma_it_baitul_jannah.add(infospotsma_it_baitul_jannah2);
+infospotsma_it_baitul_jannah2.addEventListener('click', function(){
+window.open( 'https://baituljannah.sch.id/', '_blank');
+});
+viewer.add( sma_it_baitul_jannah );
+var sma_it_daarul_ilmi = new PANOLENS.ImagePanorama( "panoramas/sma_it_daarul_ilmi.png" );
+			sma_it_daarul_ilmi.addEventListener('progress', onProgress);
+			sma_it_daarul_ilmi.addEventListener('load', function(e){
+				endLoading();
+			});
+			sma_it_daarul_ilmi.addEventListener('enter', function(e){
+				endLoading();
+			});
+			sma_it_daarul_ilmi.addEventListener('click', function(e){
+			});
+
+var infospotsma_it_daarul_ilmi0 = new PANOLENS.Infospot( 512, hotspotIcons[3].data, true );
+					infospotsma_it_daarul_ilmi0.position.set( 4589.81, -478.48, 1904.77 );
+					sma_it_daarul_ilmi.add(infospotsma_it_daarul_ilmi0);
+infospotsma_it_daarul_ilmi0.addEventListener('click', function(){
+ChangePanorama('sma_it_baitul_jannah');
+});
+var infospotsma_it_daarul_ilmi1 = new PANOLENS.Infospot( 512, hotspotIcons[4].data, true );
+					infospotsma_it_daarul_ilmi1.position.set( 4879.62, -452.04, -966.21 );
+					sma_it_daarul_ilmi.add(infospotsma_it_daarul_ilmi1);
+infospotsma_it_daarul_ilmi1.addEventListener('click', function(){
+ChangePanorama('sma_it_fitrah_insani');
+});
+var infospotsma_it_daarul_ilmi2 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotsma_it_daarul_ilmi2.position.set( 4925.94, 530.38, 614.58 );
+					infospotsma_it_daarul_ilmi2.visible = false;
+					sma_it_daarul_ilmi.add(infospotsma_it_daarul_ilmi2);
+infospotsma_it_daarul_ilmi2.addEventListener('click', function(){
+window.open( 'https://www.sitdaarulilmi.sch.id/', '_blank');
+});
+viewer.add( sma_it_daarul_ilmi );
+var sma_it_fitrah_insani = new PANOLENS.ImagePanorama( "panoramas/sma_it_fitrah_insani.png" );
+			sma_it_fitrah_insani.addEventListener('progress', onProgress);
+			sma_it_fitrah_insani.addEventListener('load', function(e){
+				endLoading();
+			});
+			sma_it_fitrah_insani.addEventListener('enter', function(e){
+				endLoading();
+			});
+			sma_it_fitrah_insani.addEventListener('click', function(e){
+			});
+
+var infospotsma_it_fitrah_insani0 = new PANOLENS.Infospot( 512, hotspotIcons[4].data, true );
+					infospotsma_it_fitrah_insani0.position.set( 3056.22, -1032.95, 3806.90 );
+					sma_it_fitrah_insani.add(infospotsma_it_fitrah_insani0);
+infospotsma_it_fitrah_insani0.addEventListener('click', function(){
+ChangePanorama('sma_it_permata_bunda');
+});
+var infospotsma_it_fitrah_insani1 = new PANOLENS.Infospot( 512, hotspotIcons[3].data, true );
+					infospotsma_it_fitrah_insani1.position.set( -3805.50, -1247.38, 2979.70 );
+					sma_it_fitrah_insani.add(infospotsma_it_fitrah_insani1);
+infospotsma_it_fitrah_insani1.addEventListener('click', function(){
+ChangePanorama('sma_it_daarul_ilmi');
+});
+var infospotsma_it_fitrah_insani2 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotsma_it_fitrah_insani2.position.set( -902.56, 127.26, 4907.38 );
+					infospotsma_it_fitrah_insani2.visible = false;
+					sma_it_fitrah_insani.add(infospotsma_it_fitrah_insani2);
+infospotsma_it_fitrah_insani2.addEventListener('click', function(){
+window.open( 'https://www.instagram.com/smaitfitrahinsanibdl', '_blank');
+});
+viewer.add( sma_it_fitrah_insani );
+var sma_it_permata_bunda = new PANOLENS.ImagePanorama( "panoramas/sma_it_permata_bunda.png" );
+			sma_it_permata_bunda.addEventListener('progress', onProgress);
+			sma_it_permata_bunda.addEventListener('load', function(e){
+				endLoading();
+			});
+			sma_it_permata_bunda.addEventListener('enter', function(e){
+				endLoading();
+			});
+			sma_it_permata_bunda.addEventListener('click', function(e){
+			});
+
+var infospotsma_it_permata_bunda0 = new PANOLENS.Infospot( 512, hotspotIcons[4].data, true );
+					infospotsma_it_permata_bunda0.position.set( -2603.33, -1134.38, -4106.31 );
+					sma_it_permata_bunda.add(infospotsma_it_permata_bunda0);
+infospotsma_it_permata_bunda0.addEventListener('click', function(){
+ChangePanorama('sma_muhammadiyah_2');
+});
+var infospotsma_it_permata_bunda1 = new PANOLENS.Infospot( 512, hotspotIcons[3].data, true );
+					infospotsma_it_permata_bunda1.position.set( 2798.28, -1006.31, -4010.03 );
+					sma_it_permata_bunda.add(infospotsma_it_permata_bunda1);
+infospotsma_it_permata_bunda1.addEventListener('click', function(){
+ChangePanorama('sma_it_fitrah_insani');
+});
+var infospotsma_it_permata_bunda2 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotsma_it_permata_bunda2.position.set( 25.21, 500.10, -4970.51 );
+					infospotsma_it_permata_bunda2.visible = false;
+					sma_it_permata_bunda.add(infospotsma_it_permata_bunda2);
+infospotsma_it_permata_bunda2.addEventListener('click', function(){
+window.open( 'https://smaitpermatabunda.sch.id/', '_blank');
+});
+viewer.add( sma_it_permata_bunda );
+var sma_muhammadiyah_2 = new PANOLENS.ImagePanorama( "panoramas/sma_muhammadiyah_2.png" );
+			sma_muhammadiyah_2.addEventListener('progress', onProgress);
+			sma_muhammadiyah_2.addEventListener('load', function(e){
+				endLoading();
+			});
+			sma_muhammadiyah_2.addEventListener('enter', function(e){
+				endLoading();
+			});
+			sma_muhammadiyah_2.addEventListener('click', function(e){
+			});
+
+var infospotsma_muhammadiyah_20 = new PANOLENS.Infospot( 512, hotspotIcons[4].data, true );
+					infospotsma_muhammadiyah_20.position.set( 4605.42, 606.33, -1821.96 );
+					sma_muhammadiyah_2.add(infospotsma_muhammadiyah_20);
+infospotsma_muhammadiyah_20.addEventListener('click', function(){
+ChangePanorama('sma_perintis_1');
+});
+var infospotsma_muhammadiyah_21 = new PANOLENS.Infospot( 512, hotspotIcons[3].data, true );
+					infospotsma_muhammadiyah_21.position.set( 4771.81, 198.30, 1453.35 );
+					sma_muhammadiyah_2.add(infospotsma_muhammadiyah_21);
+infospotsma_muhammadiyah_21.addEventListener('click', function(){
+ChangePanorama('sma_it_permata_bunda');
+});
+var infospotsma_muhammadiyah_22 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotsma_muhammadiyah_22.position.set( 4976.25, 428.09, -78.22 );
+					infospotsma_muhammadiyah_22.visible = false;
+					sma_muhammadiyah_2.add(infospotsma_muhammadiyah_22);
+infospotsma_muhammadiyah_22.addEventListener('click', function(){
+window.open( 'https://smamuhabdl.sch.id', '_blank');
+});
+viewer.add( sma_muhammadiyah_2 );
+var sma_perintis_1 = new PANOLENS.ImagePanorama( "panoramas/sma_perintis_1.png" );
+			sma_perintis_1.addEventListener('progress', onProgress);
+			sma_perintis_1.addEventListener('load', function(e){
+				endLoading();
+			});
+			sma_perintis_1.addEventListener('enter', function(e){
+				endLoading();
+			});
+			sma_perintis_1.addEventListener('click', function(e){
+			});
+
+var infospotsma_perintis_10 = new PANOLENS.Infospot( 512, hotspotIcons[4].data, true );
+					infospotsma_perintis_10.position.set( 2694.31, 584.11, 4158.55 );
+					sma_perintis_1.add(infospotsma_perintis_10);
+infospotsma_perintis_10.addEventListener('click', function(){
+ChangePanorama('sma_perintis_2');
+});
+var infospotsma_perintis_11 = new PANOLENS.Infospot( 512, hotspotIcons[3].data, true );
+					infospotsma_perintis_11.position.set( -2541.32, 173.46, 4295.18 );
+					sma_perintis_1.add(infospotsma_perintis_11);
+infospotsma_perintis_11.addEventListener('click', function(){
+ChangePanorama('sma_muhammadiyah_2');
+});
+var infospotsma_perintis_12 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotsma_perintis_12.position.set( -582.56, 14.73, 4962.53 );
+					infospotsma_perintis_12.visible = false;
+					sma_perintis_1.add(infospotsma_perintis_12);
+infospotsma_perintis_12.addEventListener('click', function(){
+window.open( 'https://www.instagram.com/peristabdl/?hl=en', '_blank');
+});
+viewer.add( sma_perintis_1 );
+var sma_perintis_2 = new PANOLENS.ImagePanorama( "panoramas/sma_perintis_2.png" );
+			sma_perintis_2.addEventListener('progress', onProgress);
+			sma_perintis_2.addEventListener('load', function(e){
+				endLoading();
+			});
+			sma_perintis_2.addEventListener('enter', function(e){
+				endLoading();
+			});
+			sma_perintis_2.addEventListener('click', function(e){
+			});
+
+var infospotsma_perintis_20 = new PANOLENS.Infospot( 512, hotspotIcons[4].data, true );
+					infospotsma_perintis_20.position.set( 4859.14, -411.41, 1089.29 );
+					sma_perintis_2.add(infospotsma_perintis_20);
+infospotsma_perintis_20.addEventListener('click', function(){
+ChangePanorama('sma_surya_dharma');
+});
+var infospotsma_perintis_21 = new PANOLENS.Infospot( 512, hotspotIcons[3].data, true );
+					infospotsma_perintis_21.position.set( 4154.29, -902.13, 2614.13 );
+					sma_perintis_2.add(infospotsma_perintis_21);
+infospotsma_perintis_21.addEventListener('click', function(){
+ChangePanorama('sma_perintis_1');
+});
+var infospotsma_perintis_22 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotsma_perintis_22.position.set( 4699.31, -469.94, 1622.35 );
+					infospotsma_perintis_22.visible = false;
+					sma_perintis_2.add(infospotsma_perintis_22);
+infospotsma_perintis_22.addEventListener('click', function(){
+window.open( 'https://www.smaperintis2.sch.id', '_blank');
+});
+viewer.add( sma_perintis_2 );
+var sma_surya_dharma = new PANOLENS.ImagePanorama( "panoramas/sma_surya_dharma.png" );
+			sma_surya_dharma.addEventListener('progress', onProgress);
+			sma_surya_dharma.addEventListener('load', function(e){
+				endLoading();
+			});
+			sma_surya_dharma.addEventListener('enter', function(e){
+				endLoading();
+			});
+			sma_surya_dharma.addEventListener('click', function(e){
+			});
+
+var infospotsma_surya_dharma0 = new PANOLENS.Infospot( 512, hotspotIcons[4].data, true );
+					infospotsma_surya_dharma0.position.set( -4350.86, -395.81, -2424.49 );
+					sma_surya_dharma.add(infospotsma_surya_dharma0);
+infospotsma_surya_dharma0.addEventListener('click', function(){
+ChangePanorama('sma_xaverius');
+});
+var infospotsma_surya_dharma1 = new PANOLENS.Infospot( 512, hotspotIcons[3].data, true );
+					infospotsma_surya_dharma1.position.set( -2117.61, -781.43, -4456.07 );
+					sma_surya_dharma.add(infospotsma_surya_dharma1);
+infospotsma_surya_dharma1.addEventListener('click', function(){
+ChangePanorama('sma_perintis_2');
+});
+var infospotsma_surya_dharma2 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotsma_surya_dharma2.position.set( -3775.81, 499.97, -3226.77 );
+					infospotsma_surya_dharma2.visible = false;
+					sma_surya_dharma.add(infospotsma_surya_dharma2);
+infospotsma_surya_dharma2.addEventListener('click', function(){
+window.open( 'https://dapo.kemdikbud.go.id/sekolah/F5DD06BE520719DCF5B4', '_blank');
+});
+viewer.add( sma_surya_dharma );
+var sma_xaverius = new PANOLENS.ImagePanorama( "panoramas/sma_xaverius.png" );
+			sma_xaverius.addEventListener('progress', onProgress);
+			sma_xaverius.addEventListener('load', function(e){
+				endLoading();
+			});
+			sma_xaverius.addEventListener('enter', function(e){
+				endLoading();
+			});
+			sma_xaverius.addEventListener('click', function(e){
+			});
+
+var infospotsma_xaverius0 = new PANOLENS.Infospot( 512, hotspotIcons[4].data, true );
+					infospotsma_xaverius0.position.set( -1478.33, -826.77, -4700.36 );
+					sma_xaverius.add(infospotsma_xaverius0);
+infospotsma_xaverius0.addEventListener('click', function(){
+ChangePanorama('sma_yadika');
+});
+var infospotsma_xaverius1 = new PANOLENS.Infospot( 512, hotspotIcons[3].data, true );
+					infospotsma_xaverius1.position.set( 2296.28, -451.05, -4408.86 );
+					sma_xaverius.add(infospotsma_xaverius1);
+infospotsma_xaverius1.addEventListener('click', function(){
+ChangePanorama('sma_surya_dharma');
+});
+var infospotsma_xaverius2 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotsma_xaverius2.position.set( 411.16, 398.58, -4962.30 );
+					infospotsma_xaverius2.visible = false;
+					sma_xaverius.add(infospotsma_xaverius2);
+infospotsma_xaverius2.addEventListener('click', function(){
+window.open( 'https://www.instagram.com/xavepabdl/?hl=en', '_blank');
+});
+viewer.add( sma_xaverius );
+var sma_yadika = new PANOLENS.ImagePanorama( "panoramas/sma_yadika.png" );
+			sma_yadika.addEventListener('progress', onProgress);
+			sma_yadika.addEventListener('load', function(e){
+				endLoading();
+			});
+			sma_yadika.addEventListener('enter', function(e){
+				endLoading();
+			});
+			sma_yadika.addEventListener('click', function(e){
+			});
+
+var infospotsma_yadika0 = new PANOLENS.Infospot( 512, hotspotIcons[4].data, true );
+					infospotsma_yadika0.position.set( 1228.12, -45.10, 4838.38 );
+					sma_yadika.add(infospotsma_yadika0);
+infospotsma_yadika0.addEventListener('click', function(){
+ChangePanorama('sma_alazhar_3');
+});
+var infospotsma_yadika1 = new PANOLENS.Infospot( 512, hotspotIcons[3].data, true );
+					infospotsma_yadika1.position.set( -1850.60, -143.19, 4631.99 );
+					sma_yadika.add(infospotsma_yadika1);
+infospotsma_yadika1.addEventListener('click', function(){
+ChangePanorama('sma_xaverius');
+});
+var infospotsma_yadika2 = new PANOLENS.Infospot( 512, hotspotIcons[0].data, true );
+					infospotsma_yadika2.position.set( -92.13, -858.86, 4918.36 );
+					infospotsma_yadika2.visible = false;
+					sma_yadika.add(infospotsma_yadika2);
+infospotsma_yadika2.addEventListener('click', function(){
+window.open( 'https://smayadikabalam.sch.id', '_blank');
+});
+viewer.add( sma_yadika );
+$(document).ready(function(){ ChangePanorama('sma_alazhar_3'); });
+
+/*panoramas-end*/
+            
+			var stilloading = true;
+			function onProgress ( event ) {
+				
+				progress = event.progress.loaded / event.progress.total * 100;
+				console.log("Loading panorama: " + progress + " ... ");
+				$("#loadingperc").html(Math.ceil(progress) + "%");
+				if(Math.ceil(progress) >= 100){
+					endLoading();
+					stilloading = false;
+
+				}else{
+				    clearTimeout(elTimer);
+					stilloading = true;
+					$("#loading").show();
+				}
+			}
+			
+			var elTimer;
+			function endLoading(){
+			    clearTimeout(elTimer);
+				if(stilloading == false){
+					elTimer = setTimeout(function(){
+						$("#loading").fadeOut();
+					}, 750);
+					
+				}
+			}
+			
+			function hideTemp(){
+				$("#tmp").fadeOut();
+				setTimeout(function(){
+					$("#tmpcontent").html("");
+				},1000);
+			}
+			
+			function showMedia(type, content){
+				switch(type){
+					case 1 :
+						//Image
+						$("#tmpcontent").html("<img src='"+content+"' style='width: 100%;'>");
+						$("#tmp").fadeIn();
+						break;
+					case 2 :
+						//Video
+						$("#tmpcontent").html("<video id='webvideo' controls autoplay style='width: 100%; height: 100%;'><source src='" +content+ "' type='video/mp4'> Your browser does not support the video tag. </video>");
+						$("#tmp").fadeIn();
+						break;
+					case 3 :
+						//Audio
+						$("#tmpcontent").html("<audio controls style='width: 100%;'><source src='"+content+"' type='audio/ogg'>Your browser does not support the audio tag.</audio>");
+						$("#tmp").fadeIn();
+						break;
+					case 4 :
+						//PDF
+						$("#tmpcontent").html("<iframe src='pdfjs/web/viewer.html?file=../../"+content+"' style='width: 100%; height: 99%;'></iframe>");
+						$("#tmp").fadeIn();
+						break;
+				}
+			}
+			
+			
+			
+			//Update Callback
+			viewer.addUpdateCallback(function(){
+				
+				/*viewerupdatecallback*/
+if(viewer.panorama == sma_alazhar_3){
+ShowMyInfospot(infospotsma_alazhar_31, 'infospotsma_alazhar_31');
+}
+
+if(viewer.panorama == sma_alkautsar){
+ShowMyInfospot(infospotsma_alkautsar2, 'infospotsma_alkautsar2');
+}
+
+if(viewer.panorama == sma_arraihan){
+ShowMyInfospot(infospotsma_arraihan2, 'infospotsma_arraihan2');
+}
+
+if(viewer.panorama == sma_bpk_penabur){
+ShowMyInfospot(infospotsma_bpk_penabur2, 'infospotsma_bpk_penabur2');
+}
+
+if(viewer.panorama == sma_darma_bangsa){
+ShowMyInfospot(infospotsma_darma_bangsa2, 'infospotsma_darma_bangsa2');
+}
+
+if(viewer.panorama == sma_dcc_global){
+ShowMyInfospot(infospotsma_dcc_global2, 'infospotsma_dcc_global2');
+}
+
+if(viewer.panorama == sma_fransiskus){
+ShowMyInfospot(infospotsma_fransiskus2, 'infospotsma_fransiskus2');
+}
+
+if(viewer.panorama == sma_gajah_mada){
+ShowMyInfospot(infospotsma_gajah_mada2, 'infospotsma_gajah_mada2');
+}
+
+if(viewer.panorama == sma_global_surya){
+ShowMyInfospot(infospotsma_global_surya2, 'infospotsma_global_surya2');
+}
+
+if(viewer.panorama == sma_immanuel){
+ShowMyInfospot(infospotsma_immanuel2, 'infospotsma_immanuel2');
+}
+
+if(viewer.panorama == sma_it_baitul_jannah){
+ShowMyInfospot(infospotsma_it_baitul_jannah2, 'infospotsma_it_baitul_jannah2');
+}
+
+if(viewer.panorama == sma_it_daarul_ilmi){
+ShowMyInfospot(infospotsma_it_daarul_ilmi2, 'infospotsma_it_daarul_ilmi2');
+}
+
+if(viewer.panorama == sma_it_fitrah_insani){
+ShowMyInfospot(infospotsma_it_fitrah_insani2, 'infospotsma_it_fitrah_insani2');
+}
+
+if(viewer.panorama == sma_it_permata_bunda){
+ShowMyInfospot(infospotsma_it_permata_bunda2, 'infospotsma_it_permata_bunda2');
+}
+
+if(viewer.panorama == sma_muhammadiyah_2){
+ShowMyInfospot(infospotsma_muhammadiyah_22, 'infospotsma_muhammadiyah_22');
+}
+
+if(viewer.panorama == sma_perintis_1){
+ShowMyInfospot(infospotsma_perintis_12, 'infospotsma_perintis_12');
+}
+
+if(viewer.panorama == sma_perintis_2){
+ShowMyInfospot(infospotsma_perintis_22, 'infospotsma_perintis_22');
+}
+
+if(viewer.panorama == sma_surya_dharma){
+ShowMyInfospot(infospotsma_surya_dharma2, 'infospotsma_surya_dharma2');
+}
+
+if(viewer.panorama == sma_xaverius){
+ShowMyInfospot(infospotsma_xaverius2, 'infospotsma_xaverius2');
+}
+
+if(viewer.panorama == sma_yadika){
+ShowMyInfospot(infospotsma_yadika2, 'infospotsma_yadika2');
+}
+/*viewerupdatecallback-end*/
+				
+				
+			});
+			
+			
+			
+			var hotspotsvisible = true;
+			function ShowMyInfospot(hs, elid){
+				var thehs = toScreenPosition(hs);
+				if(thehs.z < 1){
+					$("#" + elid).css({
+						"top" : (thehs.y - ($("#" + elid).height()/2)) + "px",
+						"left" : (thehs.x - ($("#" + elid).width()/2)) + "px",
+					});
+					if(hotspotsvisible)
+						$("#" + elid).show();
+				}else{
+					$("#" + elid).hide();
+				}
+				
+			}
+			
+			function toScreenPosition(obj)
+			{
+				var vector = new THREE.Vector3();
+				var widthHalf = 0.5 * innerWidth;
+				var heightHalf = 0.5 * innerHeight;
+				
+				//obj.updateMatrixWorld();				
+				vector.setFromMatrixPosition(obj.matrixWorld);
+				
+				
+				vector.project(viewer.camera);
+
+				vector.x = ( vector.x * widthHalf ) + widthHalf;
+				vector.y = - ( vector.y * heightHalf ) + heightHalf;
+
+				
+				return { 
+					x: vector.x,
+					y: vector.y,
+					z: vector.z,
+				};
+
+			};
+			
+			var currentPanorama;
+			function ChangePanorama(panorama){
+				currentPanorama = panorama;
+				HideInfospots(); 
+				$("#loading").fadeIn();
+				//$(".customhotspot").fadeOut();
+				setTimeout(function(){
+					viewer.setPanorama(window[panorama]);
+				}, 100);
+				setTimeout(function(){
+					$("#" + panorama).fadeIn();
+				}, 1000);
+				
+			}
+			
+			
+			
+			
+			
+			function HideInfospots(){
+				$(".customhotspot").fadeOut();
+			}
+
+			/*customjs*/
+function chclickinfospotsma_alazhar_31(){ 
+window.open( 'https://smaalazhar3.sch.id/', '_blank');
+}
+
+function chclickinfospotsma_alkautsar2(){ 
+window.open( 'https://alkautsarlampung.sch.id/', '_blank');
+}
+
+function chclickinfospotsma_arraihan2(){ 
+window.open( 'https://www.instagram.com/arraihan_islamicschool/?hl=en', '_blank');
+}
+
+function chclickinfospotsma_bpk_penabur2(){ 
+window.open( 'https://bpkpenabur.or.id/', '_blank');
+}
+
+function chclickinfospotsma_darma_bangsa2(){ 
+window.open( 'https://www.darmabangsa.sch.id', '_blank');
+}
+
+function chclickinfospotsma_dcc_global2(){ 
+window.open( 'https://www.dccglobal.sch.id/', '_blank');
+}
+
+function chclickinfospotsma_fransiskus2(){ 
+window.open( 'https://www.instagram.com/sma_fransiskus_bdl/?hl=en', '_blank');
+}
+
+function chclickinfospotsma_gajah_mada2(){ 
+window.open( 'https://www.instagram.com/smagama_bdl/?hl=en', '_blank');
+}
+
+function chclickinfospotsma_global_surya2(){ 
+window.open( 'https://www.globalsurya.sch.id/', '_blank');
+}
+
+function chclickinfospotsma_immanuel2(){ 
+window.open( 'https://www.instagram.com/osissmanuel/', '_blank');
+}
+
+function chclickinfospotsma_it_baitul_jannah2(){ 
+window.open( 'https://baituljannah.sch.id/', '_blank');
+}
+
+function chclickinfospotsma_it_daarul_ilmi2(){ 
+window.open( 'https://www.sitdaarulilmi.sch.id/', '_blank');
+}
+
+function chclickinfospotsma_it_fitrah_insani2(){ 
+window.open( 'https://www.instagram.com/smaitfitrahinsanibdl', '_blank');
+}
+
+function chclickinfospotsma_it_permata_bunda2(){ 
+window.open( 'https://smaitpermatabunda.sch.id/', '_blank');
+}
+
+function chclickinfospotsma_muhammadiyah_22(){ 
+window.open( 'https://smamuhabdl.sch.id', '_blank');
+}
+
+function chclickinfospotsma_perintis_12(){ 
+window.open( 'https://www.instagram.com/peristabdl/?hl=en', '_blank');
+}
+
+function chclickinfospotsma_perintis_22(){ 
+window.open( 'https://www.smaperintis2.sch.id', '_blank');
+}
+
+function chclickinfospotsma_surya_dharma2(){ 
+window.open( 'https://dapo.kemdikbud.go.id/sekolah/F5DD06BE520719DCF5B4', '_blank');
+}
+
+function chclickinfospotsma_xaverius2(){ 
+window.open( 'https://www.instagram.com/xavepabdl/?hl=en', '_blank');
+}
+
+function chclickinfospotsma_yadika2(){ 
+window.open( 'https://smayadikabalam.sch.id', '_blank');
+}
+/*customjs-end*/
+        </script>
+	</body>
+</html>
